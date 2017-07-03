@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Commander</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fuild">
+
+		<div class="row">
+			<nav class="navbar  navbar-default">
+
+				
+				<div class="row col-xs-10 col-xs-offset-1">
+
+					<ul class="pager">
+						<li class="previous"><a href="/"> <img alt="Brand"
+								src="image/capture.png" width="100px">
+						</a></li>
+
+						<li><a type="button" href="gestionCompte.html">Gérer
+										votre compte</a></li>
+								<li><a type="button" id="clear" href="/logout">Se Déconnecter</a></li>
+							
+								<li><a type="button" href="commandes.html">Vos
+										Commandes</a></li>
+								<li><a type="button" href="panier.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+									</a></li>	
+
+						<li class="next"><a id="user"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> </a></li>
+					</ul>
+
+
+
+				</div>
+		
+
+		</nav>
+	</div>
+		<div class=" col-xs-offset-3 col-xs-6 text-center">
+
+			<select class="form-control  input-lg text-center" name="selector"
+				data-toggle="tooltip" data-placement="top"
+				title="En selectionnant un boulangerie, son adresse s'affiche.">
+			</select>
+
+			<div id="avant" class="text-center"></div>
+			<div class="text-center">
+				<button type="submit" value="submit" id="bouton_post"
+					class="btn btn-primary" data-toggle="tooltip" data-placement="top"
+					title="En cliquant sur ce bouton, je choisis la boulangerie ci-dessus">C'est
+					mon choix</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<h1 class="text-center">Ingredients</h1>
+				<table class="table table-condensed" id="ingredients">
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Prix</th>
+						</tr>
+					</thead>
+					<tbody id="tablingre">
+
+					</tbody>
+				</table>
+
+				<div class="row text-center " id="création">
+
+					<form class="form">
+						<div class="form-group text-center ">
+							<input type="text" class="form-control" id="nom"
+								placeholder="ex: Mon précieux">
+						</div>
+
+					</form>
+					<button class="btn btn-default text-center" id="dowish">Créer
+						votre dowish</button>
+					<div class="row text-center">
+						<div class="col-xs-6 col-xs-offset-2">
+
+							<dl class="dl-horizontal">
+								<dt>nom:</dt>
+								<dd id="nomd"></dd>
+								<dt>prix:</dt>
+								<dd id="prixd"></dd>
+								<dt id="ingredient">ingredient:</dt>
+
+							</dl>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="text-center">
+							<button class="btn btn-default" id="ajouter">Ajouter au
+								panier</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 text-center">
+				<h1 class="text-center">Sandwich</h1>
+				<table class="table table-condensed text-center" id="ingredients">
+					<thead>
+						<tr>
+							<th class="text-center">Nom</th>
+							<th class="text-center">Prix</th>
+						</tr>
+					</thead>
+					<tbody id="tablsand">
+
+					</tbody>
+				</table>
+				<button class="btn btn-default text-center" id="insérer">Ajouter
+					au panier</button>
+					
+					
+					
+				
+			</div>
+		</div>
+
+
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="javascript_client/listBoulange.js"></script>
+	<script src="javascript_client/adresse.js"></script>
+	<script src="javascript_client/listIngredient.js"></script>
+	<script src="javascript_client/ListSandwich.js"></script>
+	<script src="javascript_client/ajoutPanierSandwich.js"></script>
+   
+    <script src="javascript_client/ajoutPanierDowish.js"></script>
+    <script src="js/clear.js"></script>
+    
+    
+    
+    
+    
+</body>
+</html>

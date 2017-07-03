@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Page d'accueil</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+			<nav class="navbar  navbar-default">
+
+				
+				<div class="row col-xs-10 col-xs-offset-1">
+
+					<ul class="pager">
+						<li class="previous"><a href="/"> <img alt="Brand"
+								src="image/capture.png" width="100px">
+						</a></li>
+
+						<li><a type="button" href="catalogue.html">Votre
+								catalogue </a></li>
+						<li><a type="button" href="logout">Se Déconnecter</a></li>
+
+						<li class="next"><a id="user"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> </a></li>
+					</ul>
+
+
+
+				</div>
+		
+
+		</nav>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-6 text-center">
+			<div class="thumbnail">
+				<h3>Commandes à valider</h3>
+
+				<div class="caption">
+
+					<h1 class="valider">...</h1>
+					<p>
+						<a href="enattente.html" class="btn btn-primary" role="button">Détail</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="col-sm-6 col-md-6 text-center">
+			<div class="thumbnail">
+				<h3>Commandes à préparer</h3>
+
+				<div class="caption">
+
+					<h1 class="preparer">...</h1>
+					<p>
+						<a href="validées.html" class="btn btn-primary" role="button">Détail</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-6 text-center">
+		<div class="thumbnail">
+			<h3>Commandes à solder</h3>
+
+			<div class="caption">
+
+				<h1 class="solder">...</h1>
+				<p>
+					<a href="préparées.html" class="btn btn-primary" role="button">Détail</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="col-sm-6 col-md-6 text-center">
+		<div class="thumbnail">
+			<h1>Necessité</h1>
+
+			<div class="caption">
+
+				<div class="row">
+					<div class="col-xs-6">
+						<h3 class="text-center">Ingredients</h3>
+						<table class="table table-condensed text-left" id="ingredients">
+							<thead>
+								<tr>
+									<th>Nom</th>
+									<th>quant.</th>
+							</thead>
+							<tbody id="tablingre">
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="col-xs-6">
+						<h3 class="text-center">Sandwich</h3>
+						<table class="table table-condensed text-left" id="ingredients">
+							<thead>
+								<tr>
+									<th>Nom</th>
+									<th>quant.</th>
+							</thead>
+							<tbody id="tablsand">
+
+							</tbody>
+						</table>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="javascript_boulangerie/boulangerie.js"></script>
+<script src="js/clear.js"></script>
+
+
+</html>

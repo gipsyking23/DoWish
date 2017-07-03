@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Page d'administration</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+			<nav class="navbar  navbar-default">
+
+				
+				<div class="row col-xs-10 col-xs-offset-1">
+
+					<ul class="pager">
+						<li class="previous"><a href="/"> <img alt="Brand"
+								src="image/capture.png" width="100px">
+						</a></li>
+
+						<li><a type="button" href="gestionCompte.html">Gérer
+										votre compte</a></li>
+								<li><a type="button" href="/logout">Se Déconnecter</a></li>
+								<li><a type="button" data-toggle="modal"
+									data-target="#myModal">Ajouter une boulangerie</a></li>
+								<li><a type="button" data-toggle="modal"
+									data-target="#myModal1">Supprimer un
+										utilisateur</a></li>
+										<li><a type="button" data-toggle="modal"
+									data-target="#myModal2">Modifier un utlisateur</a></li>
+
+						<li class="next"><a id="user"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> </a></li>
+					</ul>
+
+
+
+				</div>
+		
+
+		</nav>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row text-center">
+				<div  id="avant">
+
+			    </div>	
+			    <div id="apres">
+
+			    </div>
+
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-md"   role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 id="myModalLabel">Ajouter une boulangerie</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal col-md-offset-4">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-6">
+								<input type="email" class="form-control" id="email"
+									placeholder="ex: simplon.co@dowish.fr">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="nom" class="col-sm-3 control-label">Nom</label>
+							<div class="col-sm-6">
+								<input type="text" class="form-control" id="nom"
+									placeholder="ex: Wayne">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="telephone" class="col-sm-3 control-label">Telephone</label>
+							<div class="col-sm-6">
+								<input pattern="0[1-9][0-9]{8}" type="text" class="form-control"
+									id="telephone" placeholder="ex: 0611121314">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="numero" class="col-sm-3 control-label">n°</label>
+							<div class="col-sm-6">
+								<input pattern="0[1-9][0-9]{8}" type="text" class="form-control"
+									id="numero" placeholder="ex: 29">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="rue" class="col-sm-3 control-label">rue</label>
+							<div class="col-sm-6">
+								<input pattern="0[1-9][0-9]{8}" type="text" class="form-control"
+									id="rue" placeholder="ex: bis boulevard Miche France">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ville" class="col-sm-3 control-label">ville</label>
+							<div class="col-sm-6">
+								<input pattern="0[1-9][0-9]{8}" type="text" class="form-control"
+									id="ville" placeholder="ex: Auxerre">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="codepostal" class="col-sm-3 control-label">code
+								postal</label>
+							<div class="col-sm-6">
+								<input pattern="0[1-9][0-9]{8}" type="text" class="form-control"
+									id="codepostal" placeholder="ex: 89000">
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">fermer</button>
+					<button type="submit" value="submit" id="bouton_post"
+						class="btn btn-primary">ENREGISTRER</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 id="myModalLabel">Afficher les infos utilisateur</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal col-md-offset-4">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-6">
+								<input type="email" class="form-control" id="email2"
+									placeholder="ex: simplon.co@dowish.fr">
+							</div>
+						</div>
+						
+
+						</form>
+						
+						
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">fermer</button>
+					<button type="submit" value="submit" id="bouton_get"
+						class="btn btn-primary">Trouver</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 id="myModalLabel">Afficher les infos utilisateur</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal col-md-offset-4">
+						<div class="form-group">
+							<label for="email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-6">
+								<input type="email" class="form-control" id="email3"
+									placeholder="ex: simplon.co@dowish.fr">
+							</div>
+						</div>
+						
+
+						</form>
+						
+						
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">fermer</button>
+					<button type="submit" value="submit" id="bouton_get2"
+						class="btn btn-primary">Trouver</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="javascript_boulangerie/ajouterBoulangerie.js"></script>
+	
+</body>
+</html>

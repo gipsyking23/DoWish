@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Commander</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fuild">
+
+		<div class="row">
+			<nav class="navbar  navbar-default">
+
+				
+				<div class="row col-xs-10 col-xs-offset-1">
+
+					<ul class="pager">
+						<li class="previous"><a href="/"> <img alt="Brand"
+								src="image/capture.png" width="100px">
+						</a></li>
+
+						<li><a type="button" href="gestionCompte.html">Gérer
+										votre compte</a></li>
+								<li><a type="button"  id="clear" href="/logout">Se Déconnecter</a></li>
+							
+								<li><a type="button" href="commandes.html">Vos
+										Commandes</a></li>
+								<li><a type="button" href="commander.html">
+										Commander</a></li>
+
+						<li class="next"><a id="user"><span class="glyphicon glyphicon-user"
+							aria-hidden="true"></span> </a></li>
+					</ul>
+
+
+
+				</div>
+		
+
+		</nav>
+	</div>
+		<div class=" col-xs-offset-3 col-xs-6 text-center">
+
+			
+					
+					
+				<div class="page-header  text-center">
+					<h1>VOTRE PANIER</h1>
+				</div>
+				<div id="recap">
+				<table class="table  table-condensed">
+					<thead>
+						<tr>
+							<th class="text-center">Nom</th>
+							<th class="text-center">Quantité</th>
+							<th class="text-center">Prix</th>
+						</tr>
+					</thead>
+					<tbody id="panier">
+
+						<tr class="panier">
+
+							<td>-</td>
+							<td>total</td>
+							<td id="total"><b>0</b></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<form class="form-inline">
+						<div class="form-group">
+							<label for="date">Date de retrait</label> <input type="date"
+								class="form-control" id="date" placeholder="">
+						</div>
+						<div class="form-group">
+							<label for="heure">heure de retrait</label> <input type="time"
+								class="form-control" id="heure"
+								placeholder="jane.doe@example.com">
+						</div>
+						
+					</form>
+					<button id="valider" class="btn btn-default">Validation</button>
+				</div>
+			</div>
+			</div>
+		</div>
+
+
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="javascript_client/ajouterPanier.js"></script>
+	
+	
+    <script src="javascript_client/creerPanier.js"></script>
+   
+    
+    <script src="js/clear.js"></script>
+    
+    
+    
+    
+</body>
+</html>
