@@ -27,13 +27,17 @@ public class DowishService {
 	public Dowish enregistrer(String nom, List<String> nomIngredients, String email) {
 		float prixUnitaire = 0;
 		List<Ingredient> ingredients = new ArrayList<>();
-
+        System.out.println(ingredients);
 		for (String ingredient : nomIngredients) {
 			ingredients.add(ingredientRepository.findByNomAndBoulangerieEmail(ingredient, email));
+			  
 		}
+		  
 
 		for (Ingredient ingredient : ingredients) {
 			prixUnitaire += ingredient.getPrix();
+			System.out.println(prixUnitaire);
+			System.out.println("chico");
 		}
 
 		float prix = prixUnitaire;

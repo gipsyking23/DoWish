@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -13,9 +14,13 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idclient;
+	@NotNull
 	private String nom;
+	@NotNull
 	private String prenom;
+	@NotNull
 	private String email;
+	@NotNull
 	private String tel;
 
 

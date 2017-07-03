@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -19,8 +20,9 @@ public class Sandwich {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idsandwich;
+	@NotNull
 	private String nom;
-	private float prix;
+	private Float prix;
 
 	@ManyToOne
 	@JoinColumn(name = "boulangerie_idboulangerie")
@@ -31,16 +33,17 @@ public class Sandwich {
 			@JoinColumn(name = "ingredient_idingredient") })
 	private List<Ingredient> ingredients;
 
-	@ManyToMany
-	@JoinTable(name = "panierdo", joinColumns = { @JoinColumn(name = "dowish_iddowish") }, inverseJoinColumns = {
-			@JoinColumn(name = "panier_idpanier") })
+//	@ManyToMany
+//	@JoinTable(name = "panierdo", joinColumns = { @JoinColumn(name = "dowish_iddowish") }, inverseJoinColumns = {
+//			@JoinColumn(name = "panier_idpanier") })
+	@ManyToMany(mappedBy="dowishs")
 	private List<Panier> paniers;
 
 	public Sandwich() {
 
 	}
 
-	public Sandwich(String nom, float prix, Boulangerie boulangerie, List<Ingredient> ingredients) {
+	public Sandwich(String nom, Float prix, Boulangerie boulangerie, List<Ingredient> ingredients) {
 		super();
 		this.nom = nom;
 		this.prix = prix;
@@ -52,7 +55,7 @@ public class Sandwich {
 		return idsandwich;
 	}
 
-	public void setIdsandwich(long idsandwich) {
+	public void setIdsandwich(Long idsandwich) {
 		this.idsandwich = idsandwich;
 	}
 
@@ -68,7 +71,7 @@ public class Sandwich {
 		return prix;
 	}
 
-	public void setPrix(float prix) {
+	public void setPrix(Float prix) {
 		this.prix = prix;
 	}
 	@JsonIgnore

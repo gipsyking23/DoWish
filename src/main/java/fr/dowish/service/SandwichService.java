@@ -102,4 +102,9 @@ public class SandwichService {
 		return sandwichRepository.save(s); 
 
 	}
+
+	public Sandwich TrouverParNom(String nom, String emailboulangerie) {
+		return sandwichRepository.findByNomAndBoulangerieEmail(nom, emailboulangerie);
+		
+	}
 }

@@ -8,7 +8,8 @@ import fr.dowish.domain.Panier;
 public interface PanierRepository extends JpaRepository<Panier, Long> {
 	
 	public Panier findByIdpanier(Long id);
-	public Panier findByNumeropanierRéférence(Long référence); 
+	public Panier findByNumeropanierRéférence(Long référence);
+	public void deleteByNumeropanierRéférence(Long référence); 
 
 	 
 }

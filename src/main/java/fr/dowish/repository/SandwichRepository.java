@@ -10,25 +10,30 @@ import fr.dowish.domain.Sandwich;
 @Repository
 public interface SandwichRepository extends JpaRepository<Sandwich, Long> {
 
-//	@Query( value="select * from sandwich s right join boulangerie b on s.boulangerie_idboulangerie = b.idboulangerie where b.nom = :nom", nativeQuery= true)
-//	 public List<Sandwich> afficherLesSandwichParBoulangerie(@Param("nom") String nom);
-	
-//	@Query (value="SELECT * from sandwich INNER JOIN composant ON composant.sandwich_idsandwich = sandwich.idsandwich INNER JOIN ingredient ON composant.ingredient_idingredient = ingredient.idingredient WHERE ingredient.nom  = :nom", nativeQuery= true)
-//	 public List<Sandwich> rechercheSandwichParIngredient(@Param("nom") String nom);
-	
-	public List<Sandwich> findByIngredientsNomAndBoulangerieEmail(String nom, String email );
-	
-	public  List<Sandwich> findByBoulangerieEmail(String email);
-	
-	
-	
 	
 
-	public void deleteByNomAndBoulangerieNom (String nom, String NomBoulangerie );
-	
-	public  Sandwich findByNomAndBoulangerieEmail (String Nom, String emailboulangerie);
+	public List<Sandwich> findByIngredientsNomAndBoulangerieEmail(String nom, String email);
+
+	public List<Sandwich> findByBoulangerieEmail(String email);
+
+	public void deleteByNomAndBoulangerieNom(String nom, String NomBoulangerie);
+
+	public Sandwich findByNomAndBoulangerieEmail(String Nom, String emailboulangerie);
 
 	public void deleteByNomAndBoulangerieEmail(String nom, String emailBoulangerie);
-	}
 	
+	
+}
 
+//@Query( value="select * from sandwich s right join boulangerie b on
+	// s.boulangerie_idboulangerie = b.idboulangerie where b.nom = :nom",
+	// nativeQuery= true)
+	// public List<Sandwich> afficherLesSandwichParBoulangerie(@Param("nom")
+	// String nom);
+
+	// @Query (value="SELECT * from sandwich INNER JOIN composant ON
+	// composant.sandwich_idsandwich = sandwich.idsandwich INNER JOIN ingredient
+	// ON composant.ingredient_idingredient = ingredient.idingredient WHERE
+	// ingredient.nom = :nom", nativeQuery= true)
+	// public List<Sandwich> rechercheSandwichParIngredient(@Param("nom") String
+	// nom);

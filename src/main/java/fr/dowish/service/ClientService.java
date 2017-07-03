@@ -48,6 +48,11 @@ public Client modifierTel(String email, String nouveautel) {
 	public Client TrouverUnClient(String email) {
 		return clientRepository.findByEmail(email);
 	}
+
+
+	public Client effacer(String email) {
+		return clientRepository.deleteByEmail(email);
+	}
 	
 	
 }

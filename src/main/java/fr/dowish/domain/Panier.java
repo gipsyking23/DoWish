@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Future;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
@@ -20,6 +22,7 @@ public class Panier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idpanier;
+	@Future
 	private Date dateretrait;
 	private Time heureretrait;
 	private Float total;
@@ -27,15 +30,25 @@ public class Panier {
 	@OneToOne
 	@JoinColumn(name="numeropanier_référence")
 	private Numeropanier numeropanier;
-
+ 
 	@OneToOne
 	@JoinColumn(name="client_idclient")
 	private Client client;
 	
-	@ManyToMany(mappedBy = "paniers")
+//	@ManyToMany(mappedBy = "paniers")
+//	private List<Dowish> dowishs;
+//	
+//	@ManyToMany(mappedBy = "paniers")
+//	private List<Sandwich> sandwichs;
+	
+	@ManyToMany
+	@JoinTable(name = "panierdo", joinColumns = { @JoinColumn(name = "panier_idpanier") }, inverseJoinColumns = {
+			@JoinColumn(name = "dowish_iddowish")} )
 	private List<Dowish> dowishs;
 	
-	@ManyToMany(mappedBy = "paniers")
+	@ManyToMany
+	@JoinTable(name = "paniersand", joinColumns = { @JoinColumn(name = "panier_idpanier") }, inverseJoinColumns = {
+			@JoinColumn(name = "sandwich_idsandwich")} )
 	private List<Sandwich> sandwichs;
 	
 	public Panier() {

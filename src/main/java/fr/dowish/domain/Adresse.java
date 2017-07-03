@@ -1,4 +1,4 @@
-package fr.dowish.domain;
+ package fr.dowish.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +14,7 @@ public class Adresse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	 private Long idadresse;
+	
 	 private int numero;
 	 private String rue;
 	 private String ville;
@@ -65,7 +66,7 @@ public class Adresse {
 		this.codepostal = codepostal;
 	}
 	
-	@JsonIgnore
+	
 	public Boulangerie getBoulangerie() {
 		return boulangerie;
 	}

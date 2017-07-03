@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -20,7 +21,9 @@ public class Dowish {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long iddowish; 
-	private String nom; //étoile dans le nom pour le distinguer
+	
+	private String nom;
+	@NotNull               //étoile dans le nom pour le distinguer
 	private Float prix;
 	
 	@OneToOne
@@ -35,10 +38,11 @@ public class Dowish {
 	           )
 	private List<Ingredient> ingredients;
 	
-	
-	@ManyToMany
-	@JoinTable(name = "panierdo", joinColumns = { @JoinColumn(name = "dowish_iddowish") }, inverseJoinColumns = {
-			@JoinColumn(name = "panier_idpanier")} )
+//	
+//	@ManyToMany
+//	@JoinTable(name = "panierdo", joinColumns = { @JoinColumn(name = "dowish_iddowish") }, inverseJoinColumns = {
+//			@JoinColumn(name = "panier_idpanier")} )
+	@ManyToMany(mappedBy="dowishs")
 	private  List<Panier> paniers;
 	
 	public Dowish() {

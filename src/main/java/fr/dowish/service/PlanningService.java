@@ -24,11 +24,12 @@ public class PlanningService {
 	@Autowired
 	JourRepository JourRepository;
 
-	public List<Planning> calendier(String emailBoulangerie) {
+	public List<Planning> calendrier(String emailBoulangerie) {
 		return planningRepository.findByBoulangerieEmail(emailBoulangerie);
 	}
 
-	public void faireAgenda(Date date, Time heureOuverture, Time heurefermeture, boolean fermée, String email,
+	public void faireAgenda(Date date, Time heureOuverture,
+			Time heurefermeture, boolean fermée, String email,
 			String jour) {
 
 		Planning p = new Planning();
@@ -48,8 +49,7 @@ public class PlanningService {
 		planningRepository.save(p);
 	}
 
-	public void modifierHorraire(Date date, Time heureOuverture, Time heurefermeture, boolean fermée,
-			String email) {
+	public void modifierHorraire(Date date, Time heureOuverture, Time heurefermeture, boolean fermée, String email) {
 		Planning p = new Planning();
 		p.setIdplanning(planningRepository.findByDateAndBoulangerieEmail(date, email).getIdplanning());
 		p.setFermée(fermée);

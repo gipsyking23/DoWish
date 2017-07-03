@@ -32,7 +32,6 @@ public class PanierService {
 
 	public Panier enregistrer(Date dateretrait, Time heureretrait, String emailclient, List<String> nomsandiwchs,
 			List<Long> codeDowishs, String emailboulangerie) {
-
 		float total = 0;
 
 		float prixUnitaireDowish = 0;
@@ -139,8 +138,8 @@ public class PanierService {
 		return total;
 	}
 
-	public void effacer(Long id) {
-		panierRepository.delete(id);
+	public void effacer(Long référence) {
+		panierRepository.deleteByNumeropanierRéférence(référence);
 
 	}
 

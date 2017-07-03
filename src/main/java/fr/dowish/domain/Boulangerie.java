@@ -38,7 +38,7 @@ public class Boulangerie {
 		this.tel = tel;
 
 	}
-
+@JsonIgnore
 	public Long getIdboulangerie() {
 		return idboulangerie;
 	}

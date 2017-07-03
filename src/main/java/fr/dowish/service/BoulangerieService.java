@@ -54,4 +54,11 @@ public class BoulangerieService {
 		return boulangerieRepository.save(b);
 	}
 	
+	public void effacer(String email){
+		 boulangerieRepository.deleteByEmail(email);
+	}
+
+	public Boulangerie afficher(String email) {
+		return boulangerieRepository.findByEmail(email);
+	}
 }

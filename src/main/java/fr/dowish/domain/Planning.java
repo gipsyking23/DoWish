@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Future;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -19,6 +20,7 @@ public class Planning {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idplanning;
+	@Future
 	private Date date;
 	private Time ouverture;
 	private Time fermeture;
