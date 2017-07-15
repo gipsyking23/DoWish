@@ -13,7 +13,7 @@ public interface PlanningRepository extends JpaRepository<Planning, Long> {
 //	@Query( value="select * from planning p inner join boulangerie b on p.boulangerie_idboulangerie = b.idboulangerie where b.nom = :nom order by p.date asc", nativeQuery= true)
 //	 public List<Planning> afficherLePlanningParBoulangerie(@Param("nom") String nom);
 	
-	public List<Planning> findByBoulangerieEmail(String emailBoulangerie); 
+	public List<Planning> findByBoulangerieEmailOrderByDateAsc(String emailBoulangerie); 
 	
 	public Planning findByDateAndBoulangerieEmail(Date date, String email);
 	

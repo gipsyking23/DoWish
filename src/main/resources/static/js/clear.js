@@ -1,9 +1,5 @@
-$(document).ready(function () {
-	$("#clear").click(function() {  
-	  sessionStorage.clear();
-    });
+$(document).ready(function() {
+	$("#clear").click(function() {
+		sessionStorage.clear();
+	});
 });
-	
-		
-		
-		

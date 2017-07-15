@@ -42,7 +42,7 @@ public class CommandeService {
 	}
 
 	public List<Commande> afficherSesCommandes(String email) {
-		return commandeRepository.findByPanierClientEmail(email);
+		return commandeRepository.findByPanierClientEmailOrderByPanierDateretraitDesc(email);
 	}
 
 	public Commande recapituler(Long numero) {

@@ -2,18 +2,18 @@ $(document)
 		.ready(
 				function() {
 
-					// validate and process form here
-					var email; ;
+					var email;
+					
 
 					$.ajax({
-				
-					    async:false, 
+
+						async : false,
 						type : "GET",
 						url : "/nom",
 						success : function(response) {
-							
-							 $('#user').append(response);
-	                        email= response
+
+							$('#user').append(response);
+							email = response
 						}
 					});
 
@@ -80,7 +80,7 @@ $(document)
 					$('#tablingre').on('click', '.nom', function() {
 
 						nom = ($(this).attr("value"));
-
+						nouveaunom= "olive noire";				
 						$.ajax({
 							type : "PUT",
 							url : "boulangerie/ingredient/nom",
@@ -90,11 +90,37 @@ $(document)
 								nouveaunom : nouveaunom
 							},
 							success : function(response) {
-								alert("Commande n°: " + numero + " validée");
+								
 								location.reload();
 
 							}
 						})
 					});
+					
+					$("#ajouter")
+					.click(
+							function() {
+								
+								var nom, prix;
+								nom = $('#ingredient').val()
+								prix = $('#prix').val();
+					$.ajax({
 
-				});
+					
+						type : "POST",
+						url : "boulangerie/ingredient",
+						data : {
+							nom : nom,
+							prix : prix,
+							email : email
+						},
+						success : function(response) {
+
+							location.reload();
+						}
+					})
+							})
+					});
+					
+
+			

@@ -10,7 +10,7 @@ import fr.dowish.domain.Commande;
 @Repository
 public interface CommandeRepository extends JpaRepository<Commande, Long> {
 	
-	public List<Commande> findByPanierClientEmail(String email);	
+	public List<Commande> findByPanierClientEmailOrderByPanierDateretraitDesc(String email);	
 	public Commande findByNumeroNumero(Long numero);
 	public List<Commande> findByBoulangerieEmailAndStatutNomOrderByPanierDateretraitAscPanierHeureretraitAsc(String email, String statut); 
 	public Long countByStatutNomAndBoulangerieEmail(String statut, String Email); 

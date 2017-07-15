@@ -23,18 +23,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.formLogin();
-		http.csrf().disable().authorizeRequests().antMatchers("/", "/index", "/about", "/inscription").permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				.antMatchers("client/**", "/oder", "/reservation", "/caddie").hasRole("CLIENT")
-				.antMatchers("/boulanger/**", "/produits").hasRole("BOULANGER").anyRequest().authenticated();
+		http.csrf().disable().authorizeRequests()
+				.antMatchers("/", "/new", "/index.html", "/about.html", "/formulaireClient.html").permitAll()
+				.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("client/**").hasRole("CLIENT")
+				.antMatchers("/boulanger/**").hasRole("BOULANGER").anyRequest().authenticated();
+		
 		http.exceptionHandling().authenticationEntryPoint(authenticationEntryPoint);
 		http.formLogin().successHandler(authenticationSuccessHandler);
 		http.formLogin().failureHandler(authenticationFailureHandler);
 		http.logout().logoutSuccessHandler(logoutSuccessHandler);
 	}
-@Override
-public void configure(WebSecurity web) throws Exception{
-	web.ignoring().antMatchers("/ressources/**","static/**","/javascript_boulangerie/**","/javascript_client/**","/image/**","/css/**", "/fonts/**", "/js/**");
-}
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/ressources/**", "static/**", "/javascript_boulangerie/**", "/javascript_client/**",
+				"/image/**", "/css/**", "/fonts/**", "/js/**");
+	}
 
 }

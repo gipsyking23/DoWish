@@ -25,7 +25,7 @@ public class PlanningService {
 	JourRepository JourRepository;
 
 	public List<Planning> calendrier(String emailBoulangerie) {
-		return planningRepository.findByBoulangerieEmail(emailBoulangerie);
+		return planningRepository.findByBoulangerieEmailOrderByDateAsc(emailBoulangerie);
 	}
 
 	public void faireAgenda(Date date, Time heureOuverture,
@@ -64,6 +64,11 @@ public class PlanningService {
 			p.setOuverture(heureOuverture);
 		}
 		planningRepository.save(p);
+	}
+
+	public Planning verifier(Date date, String emailBoulangerie ) {
+		
+		return planningRepository.findByDateAndBoulangerieEmail(date, emailBoulangerie) ;
 	}
 
 }

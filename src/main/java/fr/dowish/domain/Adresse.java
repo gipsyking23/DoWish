@@ -8,6 +8,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+/**
+ * Classe de gestion d'adresse
+ * @author Tabouré cheick
+ * @version 0.1
+ */
+
 @Entity
 public class Adresse {
 	
@@ -23,9 +30,6 @@ public class Adresse {
 	 @OneToOne
 	 @JoinColumn(name="boulangerie_idboulangerie")
      private Boulangerie boulangerie;
-	
-	 
-	 
 	 
 
 	public Adresse() {

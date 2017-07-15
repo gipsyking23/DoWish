@@ -25,8 +25,18 @@ public class PlanningController {
 	public List<Planning> calendrier(@RequestParam String emailBoulangerie) {
 		return planningService.calendrier(emailBoulangerie);
 	}
-
+	@GetMapping(value = "Client/ouvert") // vérifié
+	public Planning verifierOuverture(@RequestParam Date date ,@RequestParam String emailBoulangerie) {
+		return planningService.verifier(date,emailBoulangerie);
+	}
+	
+	
 	// BOUALANGERIE
+	
+	@GetMapping(value = "Boulangerie/horaire") // vérifié
+	public List<Planning> planning(@RequestParam String emailBoulangerie) {
+		return planningService.calendrier(emailBoulangerie);
+	}
 	@PostMapping(value = "Boulangerie/horaire") // vérifié 
 	public void faireAgenda(@RequestParam Date date, @RequestParam Time heureOuverture,
 			@RequestParam Time heurefermeture, @RequestParam boolean fermée, @RequestParam String emailboulangerie,

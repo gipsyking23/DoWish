@@ -47,8 +47,8 @@ public class DoWishApplicationTests {
 	@Test
 
 	public void TrouverUneboulangerie() {
-		boulangerie = boulangerieRepository.findByEmail("michocho@dowmish.fr");
-		assertEquals("06116127890", boulangerie.getTel());
+		boulangerie = boulangerieRepository.findByEmail("amiche@dowish.fr");
+		assertEquals("06116127892", boulangerie.getTel());
 	}
 
 	@BeforeClass

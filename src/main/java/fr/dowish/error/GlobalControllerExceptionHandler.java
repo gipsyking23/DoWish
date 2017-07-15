@@ -7,20 +7,27 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+
+/**
+ * Classe de gestion d'exception
+ * @author Tabouré cheick
+ * @version 0.1
+ */
+
+
 @RestControllerAdvice
 	public class GlobalControllerExceptionHandler {
 
 	    @ExceptionHandler(value = { ConstraintViolationException.class })
-	    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	    @ResponseStatus(HttpStatus.OK)
 	    public ErrorResponse constraintViolationException() {
-	        return new ErrorResponse(500, 5001,"le champ saisi existe déjà !");
+	        return new ErrorResponse(500, 5001,"la date saisie n'est pas valide !");
 	    }
 
-
 	    @ExceptionHandler(value = { DataIntegrityViolationException.class })
-	    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	    @ResponseStatus(HttpStatus.OK)
 	    public ErrorResponse dataIntegrityViolationException() {
-	        return new ErrorResponse(500, 5002, "le champ ne correspond pas au format attendu !");
+	        return new ErrorResponse(500, 5002, "l'un des champs saisis existe déjà !");
 	    };
 	    
 	    @ExceptionHandler(value = { NullPointerException.class })

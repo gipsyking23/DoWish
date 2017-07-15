@@ -2,20 +2,19 @@ $(document)
 		.ready(
 				function() {
 					var email, statut;
-					
+
 					statut = 'en attente';
 					$.ajax({
-						
-					    async:false, 
+
+						async : false,
 						type : "GET",
 						url : "/nom",
 						success : function(response) {
-							
-							 $('#user').append(response);
-	                        email= response
+
+							$('#user').append(response);
+							email = response
 						}
 					});
-				
 
 					$
 							.ajax({

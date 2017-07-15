@@ -2,23 +2,20 @@ $(document).ready(
 		function() {
 
 			var email, statut;
-			
-			statut = 'validée';
-			
-			
 
-				$.ajax({
-			
-				    async:false, 
-					type : "GET",
-					url : "/nom",
-					success : function(response) {
-						
-						 $('#user').append(response);
-                        email= response
-					}
-				});
-			
+			statut = 'validée';
+
+			$.ajax({
+
+				async : false,
+				type : "GET",
+				url : "/nom",
+				success : function(response) {
+
+					$('#user').append(response);
+					email = response
+				}
+			});
 
 			$.ajax({
 				type : "GET",
@@ -29,7 +26,7 @@ $(document).ready(
 				success : function(response) {
 
 					var trHTML = response;
-					
+
 					$('.valider').html(trHTML);
 				}
 			});
@@ -97,10 +94,9 @@ $(document).ready(
 								statut : statut
 							},
 							success : function(data) {
-								
+
 								trHTML += '<tr><td>' + value.nom + '</td>';
 
-								
 								additif = data;
 							}
 
@@ -116,11 +112,9 @@ $(document).ready(
 								statut : statut
 							},
 							success : function(donnée) {
-							
+
 								trHTML += '<td>' + (donnée + additif)
 										+ '</td></tr>';
-
-								
 
 							}
 
@@ -130,8 +124,7 @@ $(document).ready(
 				}
 
 			});
-			
-			
+
 			$.ajax({
 				type : "GET",
 				url : "boulangerie/sandwichs",
@@ -141,7 +134,7 @@ $(document).ready(
 				},
 				success : function(response) {
 					var trHTML = '';
-					
+
 					$.each(response, function(key, value) {
 
 						$.ajax({
@@ -150,23 +143,21 @@ $(document).ready(
 							url : "boulangerie/commande/sandwich",
 							data : {
 								email : email,
-								sandwich:value.nom,
+								sandwich : value.nom,
 								statut : statut
 							},
 							success : function(data) {
-								
-								trHTML += '<tr><td>' + value.nom + '</td><td>' + data + '</td></tr>';
 
-								
-								
+								trHTML += '<tr><td>' + value.nom + '</td><td>'
+										+ data + '</td></tr>';
+
 							}
 
 						});
 
 					});
 					$('#tablsand').append(trHTML);
-					}
-						
-			
+				}
+
+			});
 		});
-		});			

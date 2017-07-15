@@ -1,4 +1,4 @@
- package fr.dowish.service;
+package fr.dowish.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,26 +20,20 @@ public class DowishService {
 
 	@Autowired
 	IngredientRepository ingredientRepository;
-	
+
 	@Autowired
 	NumerodowishService numerodowishService;
-  
+
 	public Dowish enregistrer(String nom, List<String> nomIngredients, String email) {
 		float prixUnitaire = 0;
 		List<Ingredient> ingredients = new ArrayList<>();
-        System.out.println(ingredients);
 		for (String ingredient : nomIngredients) {
 			ingredients.add(ingredientRepository.findByNomAndBoulangerieEmail(ingredient, email));
-			  
-		}
-		  
 
+		}
 		for (Ingredient ingredient : ingredients) {
 			prixUnitaire += ingredient.getPrix();
-			System.out.println(prixUnitaire);
-			System.out.println("chico");
 		}
-
 		float prix = prixUnitaire;
 		Dowish d = new Dowish();
 		d.setPrix(prix);
@@ -54,9 +48,7 @@ public class DowishService {
 		dowishRepository.delete(dowishRepository.findByNumerodowishCodebarre(numero).getIdDowish());
 	}
 
-
-	
 	public Dowish TrouverUnDowish(Long numero) {
-		  return dowishRepository.findByNumerodowishCodebarre(numero);
-		}
+		return dowishRepository.findByNumerodowishCodebarre(numero);
+	}
 }

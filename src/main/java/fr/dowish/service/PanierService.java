@@ -26,12 +26,13 @@ public class PanierService {
 	DowishRepository dowishRepository;
 	@Autowired
 	ClientRepository clientRepository;
-	
+
 	@Autowired 
 	NumeropanierService numeropanierService;
 
 	public Panier enregistrer(Date dateretrait, Time heureretrait, String emailclient, List<String> nomsandiwchs,
 			List<Long> codeDowishs, String emailboulangerie) {
+		
 		float total = 0;
 
 		float prixUnitaireDowish = 0;
@@ -65,9 +66,10 @@ public class PanierService {
 		p.setClient(clientRepository.findByEmail(emailclient));
 		p.setDowishs(dowishs);
 		p.setSandwich(sandiwchs);
-
 		return panierRepository.save(p);
-	}
+		}
+		
+	
 	public Panier modifier(Long référence, Date dateretrait, Time heureretrait, List<String> nomsandiwchs,
 			List<Long> codeDowishs, String emailboulangerie) {
 

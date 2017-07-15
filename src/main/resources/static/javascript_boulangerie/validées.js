@@ -2,21 +2,20 @@ $(document)
 		.ready(
 				function() {
 					var email, statut;
-					
+
 					statut = 'validée';
 					$.ajax({
-						
-					    async:false, 
+
+						async : false,
 						type : "GET",
 						url : "/nom",
 						success : function(response) {
-							
-							 $('#user').append(response);
-	                        email= response
+
+							$('#user').append(response);
+							email = response
 						}
 					});
-				
-					
+
 					$
 							.ajax({
 								type : "GET",

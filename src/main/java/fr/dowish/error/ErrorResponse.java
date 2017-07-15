@@ -1,5 +1,10 @@
 package fr.dowish.error;
 
+/**
+ * Classe de gestion d'erreur: message
+ * @author Tabouré cheick
+ * @version 0.1
+ */
 public class ErrorResponse {
 
 	private int status;

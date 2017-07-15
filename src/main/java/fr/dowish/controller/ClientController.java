@@ -17,7 +17,7 @@ public class ClientController {
 	@Autowired
 	ClientService clientService;
 
-	@PostMapping(value = "client") //verifié
+	@PostMapping(value = "new") //verifié
 	public  Client enregister(@RequestParam String nom, @RequestParam String prenom, @RequestParam String email, @RequestParam String tel ) {
 		 return clientService.enregister(nom, prenom, email, tel);
 	}

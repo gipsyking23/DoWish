@@ -10,6 +10,13 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * Classe de gestion de boulangerie
+ * @author Tabouré cheick
+ * @version 0.1
+ */
+
+
 @Entity
 public class Boulangerie {
 

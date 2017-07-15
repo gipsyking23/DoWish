@@ -8,6 +8,14 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
+
+/**
+ * Classe de gestion de client
+ * @author Tabouré cheick
+ * @version 0.1
+ */
+
 @Entity
 
 public class Client {

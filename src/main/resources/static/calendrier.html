@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Page d'accueil</title>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container-fluid">
+
+		<div class="row">
+			<nav class="navbar  navbar-default">
+
+
+				<div class="row col-xs-10 col-xs-offset-1">
+
+					<ul class="pager">
+						<li class="previous"><a href="/"> <img alt="Brand"
+								src="image/capture.png" width="100px">
+						</a></li>
+
+						<li><a type="button" href="catalogue.html">Votre
+								catalogue </a></li>
+						<li><a type="button" href="logout">Se Déconnecter</a></li>
+						<li><a type="button" href="boulangerie.html">Vos
+								commandes </a></li>
+						<li class="next"><a id="user"><span
+								class="glyphicon glyphicon-user" aria-hidden="true"></span> </a></li>
+					</ul>
+
+
+
+				</div>
+
+
+			</nav>
+		</div>
+		<div class="text-center" id="message"></div>
+		<div class="row text-center">
+			<form class="form-inline">
+				<div class="form-group">
+					<label class="sr-only" for="date">Date</label> <input type="date"
+						class="form-control" id="date">
+					<div class="checkbox">
+						<label> <input id="fermée" type="checkbox"> Fermé
+						</label>
+					</div>
+				</div>
+			</form>
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="ouveture">heure d'ouverture</label> <input type="time"
+						class="form-control" id="ouverture">
+				</div>
+				<div class="form-group">
+					<label for="fermeture">heure de fermeture</label> <input
+						type="time" class="form-control" id="fermeture">
+				</div>
+
+			</form>
+			<button id="valider" class="btn btn-default">Validation</button>
+		</div>
+		<div  class="col-xs-11 col-sm-12">
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Jour</th>
+                <th>date</th>
+                <th>heure d'ouverture</th>
+                <th>heure de fermeture</th>
+                <th>état</th>
+               
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Jour</th>
+                <th>date</th>
+                <th>heure d'ouverture</th>
+                <th>heure de fermeture</th>
+                <th>état</th>
+                
+            </tr>
+        </tfoot>
+        <tbody id="planning">
+        
+          
+        </tbody>
+    </table>
+
+
+
+
+
+</div>
+
+	</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="javascript_boulangerie/calendrier.js"></script>
+<script src="js/clear.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="javascript_boulangerie/planning.js"></script>
+
+
+</html>

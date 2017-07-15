@@ -52,7 +52,7 @@ public class AuthenticationConfiguration extends GlobalAuthenticationConfigurerA
 					return new User(boulangerie.getEmail(), boulangerie.getTel(), true, true, true, true,
 							AuthorityUtils.createAuthorityList("BOULANGER"));
 				} else if (client != null) {
- 
+
 					return new User(client.getEmail(), client.getTel(), true, true, true, true,
 							AuthorityUtils.createAuthorityList("CLIENT"));
 
