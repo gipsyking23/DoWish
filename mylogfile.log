@@ -8482,3 +8482,13 @@ List of constraint violations:[
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.14.jar:8.5.14]
 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
 
+2017-07-17 10:45:15.317 ERROR 8112 --- [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 11:05:24.311 ERROR 7032 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 11:14:23.391 ERROR 7032 --- [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 11:17:26.262 ERROR 7032 --- [http-nio-8080-exec-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 11:29:49.484 ERROR 7032 --- [http-nio-8080-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 11:39:17.026 ERROR 7032 --- [http-nio-8080-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 13:28:51.761 ERROR 7108 --- [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 16:40:14.678 ERROR 7108 --- [http-nio-8080-exec-9] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 16:49:14.407 ERROR 7108 --- [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'johnwayne@dowish.fr' for key 'email_UNIQUE'
+2017-07-17 17:22:55.876 ERROR 7108 --- [http-nio-8080-exec-8] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '2017-07-18-3' for key 'contr_ajout'

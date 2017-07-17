@@ -29,7 +29,7 @@ $(document)
 										} else if ($.trim(email) === "") {
 											alert("le champ email ne peut pas etre vide");
 										} else if (!validateEmail(email)) {
-											alert("veuillez entrer un email valide");
+											alert("VEUILLEZ ENTRER UN EMAIL VALIDE ! ");
 										} else if ($.trim(telephone) === "") {
 											alert("le champ téléphone ne peut pas etre vide");
 										} else if (!validateTel(telephone)) {
@@ -79,13 +79,15 @@ $(document)
 																$("#insertion")
 																		.removeAttr(
 																				'hidden');
+																$("#message")
+																		.empty();
 
 																var nomr, prenomr, emailr, telr;
 
 																nomr = response.nom
 																prenomr = response.prenom
 																emailr = response.email
-																telr = response.tel
+																telr = 'XXXXXXXXXXXX'
 
 																$("#rnom")
 																		.html(

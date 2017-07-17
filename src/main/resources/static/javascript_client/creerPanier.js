@@ -119,7 +119,7 @@ $(document)
 														success : function(
 																response) {
 
-															if (confirm(response)) {
+															
 
 																var ref = '';
 																ref = response.numeropanier.référence;
@@ -150,7 +150,7 @@ $(document)
 																									function(
 																											c,
 																											v) {
-																										trHTML += ',&nbsp'
+																										trHTML += '&nbsp'
 																												+ v.nom
 																												+ '&nbsp';
 																									});
@@ -188,8 +188,8 @@ $(document)
 																		.html(
 																				trHTML);
 
-															}
-															;
+															
+															
 														}
 
 													});

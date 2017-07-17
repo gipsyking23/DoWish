@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 	    @ExceptionHandler(value = { DataIntegrityViolationException.class })
 	    @ResponseStatus(HttpStatus.OK)
 	    public ErrorResponse dataIntegrityViolationException() {
-	        return new ErrorResponse(500, 5002, "l'un des champs saisis existe déjà !");
+	        return new ErrorResponse(500, 5002, "l'email que vous avez saisi existe déjà !");
 	    };
 	    
 	    @ExceptionHandler(value = { NullPointerException.class })

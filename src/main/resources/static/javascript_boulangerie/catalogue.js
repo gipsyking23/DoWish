@@ -3,7 +3,6 @@ $(document)
 				function() {
 
 					var email;
-					
 
 					$.ajax({
 
@@ -80,7 +79,7 @@ $(document)
 					$('#tablingre').on('click', '.nom', function() {
 
 						nom = ($(this).attr("value"));
-						nouveaunom= "olive noire";				
+						nouveaunom = "olive verte";
 						$.ajax({
 							type : "PUT",
 							url : "boulangerie/ingredient/nom",
@@ -90,37 +89,90 @@ $(document)
 								nouveaunom : nouveaunom
 							},
 							success : function(response) {
-								
+
 								location.reload();
 
 							}
 						})
 					});
-					
-					$("#ajouter")
-					.click(
-							function() {
-								
-								var nom, prix;
-								nom = $('#ingredient').val()
-								prix = $('#prix').val();
-					$.ajax({
 
-					
-						type : "POST",
-						url : "boulangerie/ingredient",
-						data : {
-							nom : nom,
-							prix : prix,
-							email : email
-						},
-						success : function(response) {
+					$("#ajouter").click(function() {
 
-							location.reload();
-						}
-					})
-							})
+						var nom, prix;
+						nom = $('#ingredient').val()
+						prixx = $('#prixx').val();
+
+						$.ajax({
+
+							type : "POST",
+							url : "boulangerie/ingredient",
+							data : {
+								nom : nom,
+								prix : prixx,
+								email : email
+							},
+							success : function(response) {
+
+								location.reload();
+							}
+						})
 					});
-					
 
-			
+					$('#tablingre').on('click', '.btn-danger', function() {
+
+						nom = ($(this).attr("value"));
+						console.log(nom);
+						$.ajax({
+							type : "GET",
+							url : "boulangerie/ingredient/off",
+							data : {
+								nom : nom,
+								emailboulangerie : email
+							},
+							success : function(response) {
+								location.reload();
+							}
+						})
+					});
+
+					$("#création").click(function() {
+
+						var ingredients = [];
+						var sandwich, prixxx;
+						sandwich = $('#sandwich').val()
+						prixxx = $('#prixxx').val();
+
+						ingredients.push($('#ingredient1').val());
+						ingredients.push($('#ingredient2').val());
+						ingredients.push($('#ingredient3').val());
+						ingredients.push($('#ingredient4').val());
+
+						if ($.trim(sandwich) === "") {
+							alert("le champ nom ne peut pas etre vide");
+						} else if ($.trim(prixxx) === "") {
+							alert("le champ prix ne peut pas tre vide");
+						} else if (isNaN(prixxx)) {
+							alert("le prix doit être un chiffre !");
+						} else if (ingredients.length !== 0) {
+							alert("veuillez ajouter au moins un ingredient !");
+						}
+						else {
+							$.ajax({
+
+								type : "POST",
+								url : "boulangerie/sandwich",
+								data : {
+									nom : sandwich,
+									prix : prixxx,
+									emailboulangerie : email,
+									ingredient : ingredients.join(',')
+								},
+								success : function(response) {
+
+									location.reload();
+								}
+							})
+						}
+					});
+
+				});

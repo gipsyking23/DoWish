@@ -54,7 +54,7 @@ public class IngredientController {
 		return ingredientService.modifierPrixIngredient(nom, nouveauprix, emailboulangerie);
 	
 }
-	@DeleteMapping(value="boulangerie/ingredient")//verifié mais casacade
+	@GetMapping(value="boulangerie/ingredient/off")//verifié mais casacade
 	public void supprimerIngredient (@RequestParam String nom, @RequestParam String emailboulangerie){
 	ingredientService.effaceringredient(nom, emailboulangerie);
 	}
